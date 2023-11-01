@@ -16,7 +16,7 @@ def generate_number_of_words_per_day() -> list[int]:
             break
 
         on_track_number = (TARGET_NUM_WORDS - sum(result)) / (NUM_DAYS_IN_NOVEMBER - i)
-        daily_number = math.ceil(on_track_number + random.randrange(-750, 750))
+        daily_number = math.ceil(on_track_number + random.randrange(-500, 500))
         result.append(daily_number)
 
     return result

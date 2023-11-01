@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <title>NaNoRiVal >:]</title>
     <link rel="stylesheet" src="reset.css" />
+    <script src="script.js"></script>
 
     <style>
         #body {
@@ -23,13 +26,15 @@
     </style>
 </head>
 
-<body>
+<body onload="main()">
     <div id="body">
         <h1>NaNoRiVal</h1>
         <h1>>:]</h1>
 
-        <h2>It's <span id="day"></span> and your rival wrote <span id="num-words-today"></span> words today!</h2>
-        <h2>In total, your rival has written <span id="num-words-cumulative"></span> words. Keep up! You can do it!</h2>
+        <h2 id="day-summary">It's <span id="day"></span> and your rival wrote <span id="num-words-today"></span> words
+            today!</h2>
+        <h2 id="cumulative-summary">In total, your rival has written <span id="num-words-cumulative"></span> words. Keep
+            up! You can do it!</h2>
 
         <div id="progress-bar">
             <!--TODO is this necessary?-->
@@ -38,8 +43,6 @@
         </div>
 
     </div>
-
-    <script src="script.js" />
 </body>
 
 </html>
