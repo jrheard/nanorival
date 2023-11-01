@@ -22,8 +22,6 @@ function main() {
         }
     }
 
-    dayIndex = 0;
-
     var todaysNumber, sumSoFar;
     if (dayIndex < 0) {
         todaysNumber = 0;
