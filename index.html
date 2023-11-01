@@ -20,16 +20,32 @@
 
         h1 {
             font-weight: bold;
-            font-size: 30px;
+            font-size: 40px;
             margin: 20px;
+        }
+
+        #progress-bar {
+            margin-top: 50px;
+            width: 790px;
+            height: 60px;
+            border: 1px solid #333;
+        }
+
+        #inner {
+            height: 60px;
+            background-color: #AAA;
+        }
+
+        #num-words-today,
+        #num-words-cumulative {
+            color: red;
         }
     </style>
 </head>
 
 <body onload="main()">
     <div id="body">
-        <h1>NaNoRiVal</h1>
-        <h1>>:]</h1>
+        <h1>NaNoRiVal >:]</h1>
 
         <h2 id="day-summary">It's <span id="day"></span> and your rival wrote <span id="num-words-today"></span> words
             today!</h2>
@@ -37,9 +53,7 @@
             up! You can do it!</h2>
 
         <div id="progress-bar">
-            <!--TODO is this necessary?-->
             <div id="inner"></div>
-
         </div>
 
     </div>

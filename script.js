@@ -11,7 +11,9 @@ function main() {
     var dayIndex;
     if (today.getMonth() > 10 || today.getFullYear() > 2023) {
         dayIndex = 30;
-        // TODO rewrite text to say it's over
+        document.getElementById("day-summary").innerText = "NaNoRiVal 2023 is over! Did you win??";
+        document.getElementById("cumulative-summary").remove()
+        document.getElementById("progress-bar").remove()
     } else {
         dayIndex = today.getDate() - 1;
         if (today.getHours() < 22) {
@@ -20,17 +22,26 @@ function main() {
         }
     }
 
+    dayIndex = 0;
+
     var todaysNumber, sumSoFar;
-    //dayIndex = 20;
     if (dayIndex < 0) {
         todaysNumber = 0;
         sumSoFar = 0;
-    } else {
-        todaysNumber = COUNTS_BY_DAY[dayIndex];
-        sumSoFar = COUNTS_BY_DAY.slice(0, dayIndex + 1).reduce(add, 0);
+        document.getElementById("day-summary").innerText = "Your rival hasn't started yet, check back later!";
+        document.getElementById("cumulative-summary").remove()
+        document.getElementById("progress-bar").remove()
+        return;
     }
 
-    console.log(dayIndex);
-    console.log(todaysNumber);
-    console.log(sumSoFar);
+    todaysNumber = COUNTS_BY_DAY[dayIndex];
+    sumSoFar = COUNTS_BY_DAY.slice(0, dayIndex + 1).reduce(add, 0);
+
+    document.getElementById("day").innerText = today.toLocaleDateString('en-us', { weekday: "long", month: "short", day: "numeric" });
+    document.getElementById("num-words-today").innerText = todaysNumber.toLocaleString("en-us");
+    document.getElementById("num-words-cumulative").innerText = sumSoFar.toLocaleString("en-us");
+
+
+    var progressBarWidth = 800 * (sumSoFar / 50000);
+    document.getElementById("inner").style.width = progressBarWidth + "px";
 }
