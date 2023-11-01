@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="stylesheet" src="reset.css" />
+
+    <style>
+        #body {
+            height: 600px;
+            width: 800px;
+            border: 1px #333;
+            margin: 0 auto;
+            padding: 50px 0;
+
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <h1>NaNoRiVal</h1>
+        <h1>>:]</h1>
+
+        <h2>It's <span id="day"></span> and your rival wrote <span id="num-words-today"></span> words today!</h2>
+        <h2>In total, your rival has written <span id="num-words-cumulative"></span> words. Keep up! You can do it!</h2>
+
+        <div id="progress-bar">
+            <!--TODO is this necessary?-->
+            <div id="inner"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js" />
+</body>
+
+</html>
