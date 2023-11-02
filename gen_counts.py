@@ -9,9 +9,11 @@ TARGET_NUM_WORDS = 50_000
 # must hit 50k by end of month
 # should be unpredictable, vary by ~1500 words either direction each day
 def generate_number_of_words_per_day() -> list[int]:
-    result = [1603] # generated 1603 on the first day and then keel asked for the algo to be changed for future days
+    result = [
+        1603
+    ]  # generated 1603 on the first day and then keel asked for the algo to be changed for future days
     for i in range(NUM_DAYS_IN_NOVEMBER - 1):
-        if i == NUM_DAYS_IN_NOVEMBER - 1:
+        if i == NUM_DAYS_IN_NOVEMBER - 2:
             result.append(TARGET_NUM_WORDS - sum(result))
             break
 
